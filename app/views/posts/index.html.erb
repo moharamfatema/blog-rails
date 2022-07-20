@@ -1,0 +1,16 @@
+
+<h1>Posts</h1>
+
+<div id="posts" class="container my-5 p-5 bg-light rounded-5">
+  <%= @posts.count.to_s + " post(s)"%>
+  <hr/>
+  <% @posts.each do |post| %>
+    <%= render post %>
+    <p>
+      <%= link_to "Show this post", post ,class: "btn btn-secondary"%>
+    </p>
+    <hr/>
+  <% end %>
+</div>
+
+<%= link_to "New post", new_post_path ,class: "btn btn-primary"%>
