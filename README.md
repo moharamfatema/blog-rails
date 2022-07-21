@@ -1,11 +1,33 @@
-# README
+# Blog (Posts with Comments)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+* Ruby version: ruby 3.1.2p20
 
-* Ruby version
+* Rails version: Rails 7.0.3.1
+
+* Database: Sqlite3
+
+---
+
+## Screenshots
+
+![Home](screenshots/posts-index.png)
+
+Homepage
+
+![New Post](screenshots/new-post.png)
+
+New Post
+
+![Edit Post](screenshots/post-edit.png)
+
+Edit Post
+
+![Show Post](screenshots/post-show.png)
+
+Show Post
+
+---
 
 * System dependencies
 
