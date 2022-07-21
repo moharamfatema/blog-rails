@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: %i[ show edit update destroy ]
 
+
   # GET /comments or /comments.json
   def index
     @comments = Comment.all
@@ -13,7 +14,7 @@ class CommentsController < ApplicationController
   # GET /comments/new
   def new
     @post = Post.find(params[:post_id])
-    @comment = Comment.new
+    @comment = @post.comments.build
   end
 
   # GET /comments/1/edit
@@ -23,7 +24,7 @@ class CommentsController < ApplicationController
   # POST /comments or /comments.json
   def create
     @post = Post.find(params[:post_id])
-    @comment = @post.comments.new(comment_params)
+    @comment = @post.comments.build(comment_params)
 
     respond_to do |format|
       if @comment.save
