@@ -12,4 +12,13 @@
       <%= button_to "Destroy this post", @post, method: :delete ,class: "btn btn-danger " %>
     </div>
   </div>
+<hr/>
+  <div >
+    <%= @post.comments.count.to_s + " comment(s)"%>
+    <hr/>
+    <%= render @post.comments %>
+    <h3>Leave a comment</h3>
+    <br/>
+    <%= render 'comments/form'%>
+  </div>
 </div>

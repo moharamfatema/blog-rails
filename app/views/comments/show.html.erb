@@ -6,5 +6,5 @@
   <%= link_to "Edit this comment", edit_post_comment_path(@comment) %> |
   <%= link_to "Back to comments", post_comments_path %>
 
-  <%= button_to "Destroy this comment", @comment, method: :delete %>
+  <%= button_to "Destroy this comment", [@comment.post, @comment], method: :delete %>
 </div>

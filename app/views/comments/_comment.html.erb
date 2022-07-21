@@ -1,12 +1,24 @@
 <div id="<%= dom_id comment %>">
   <p>
-    <strong>Name:</strong>
-    <%= comment.name %>
+    <strong><%= comment.name %></strong>
+
   </p>
 
   <p>
-    <strong>Body:</strong>
+
     <%= comment.body %>
   </p>
 
+
+  <div class="row">
+  <div class="col">
+    <%= link_to "Edit this comment", edit_post_comment_path(comment) , class:"col btn btn-secondary"%>
+  </div>
+
+    <div class="col">
+    <%= button_to "Destroy this comment", [comment.post, comment], method: :delete , class:"col btn btn-danger" %>
+  </div>
+  </div>
+
 </div>
+<hr/>

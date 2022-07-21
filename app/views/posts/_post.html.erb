@@ -1,14 +1,15 @@
-<table class="table" id="<%= dom_id post %>">
-  <tr>
-    <td><strong>Name</strong></td>
-    <td><%= post.name %></td>
-  </tr>
+<div class="table" id="<%= dom_id post %>">
+  <h1>
 
-  <tr>
-    <td><strong>Title</strong></td>
-    <td><%= post.title %></td>
-  </tr>
-</table>
+    <%= post.title %>
+  </h1>
+
+  <div>
+    by <strong> <%= post.name %></strong>
+  </div>
+
+
+</div>
 
 <p><%= post.body %></p>
 
