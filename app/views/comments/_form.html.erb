@@ -1,7 +1,9 @@
 <%= form_with(model: [@post, @post.comments.build]) do |form| %>
-  <%
+
+
+ <%
 =begin%>
- <% if comment.errors.any? %>
+ <% if @post.comment.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
 
@@ -12,9 +14,9 @@
       </ul>
     </div>
   <% end %>
+
 <%
 =end%>
-
   <div>
     <%= form.label :name, style: "display: block" , class: "form-label"%>
     <%= form.text_field :name , class: "form-control"%>

@@ -1,10 +1,13 @@
 class CommentsController < ApplicationController
+  before_action :get_post
   before_action :set_comment, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :correct_user, only: [:edit, :update, :destroy]
 
 
   # GET /comments or /comments.json
   def index
-    @comments = Comment.all
+    @comments = @post.comments
   end
 
   # GET /comments/1 or /comments/1.json
@@ -15,6 +18,7 @@ class CommentsController < ApplicationController
   def new
     @post = Post.find(params[:post_id])
     @comment = @post.comments.build
+    current_user.comments << @comment
   end
 
   # GET /comments/1/edit
@@ -25,6 +29,7 @@ class CommentsController < ApplicationController
   def create
     @post = Post.find(params[:post_id])
     @comment = @post.comments.build(comment_params)
+    current_user.comments << @comment
 
     respond_to do |format|
       if @comment.save
@@ -63,8 +68,13 @@ class CommentsController < ApplicationController
       format.json { head :no_content }
     end
   end
-
+  def correct_user
+    redirect_to post_path(@comment.post), notice: "Unauthorized action!" if @comment.user_id != current_user.id?
+  end
   private
+    def get_post
+      @post = @post = Post.find(params[:post_id])
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_comment
       @post = Post.find(params[:post_id])
