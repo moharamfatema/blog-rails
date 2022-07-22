@@ -23,6 +23,8 @@ class CommentsController < ApplicationController
 
   # GET /comments/1/edit
   def edit
+    @post = Post.find(params[:post_id])
+    @comment = @post.comments.find(params[:id])
   end
 
   # POST /comments or /comments.json
@@ -73,7 +75,7 @@ class CommentsController < ApplicationController
   end
   private
     def get_post
-      @post = @post = Post.find(params[:post_id])
+      @post = Post.find(params[:post_id])
     end
     # Use callbacks to share common setup or constraints between actions.
     def set_comment

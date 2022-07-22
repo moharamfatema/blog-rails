@@ -5,7 +5,9 @@
 <div id="comments">
   <% @comments.each do |comment| %>
     <%= render comment %>
+    <%= link_to "Show Post",post_path(comment.post) ,class: "btn btn-secondary"%>
   <% end %>
 </div>
 
-<%= link_to "New comment", new_post_comment_path %>
+<%= link_to "New comment", new_post_comment_path ,class: "btn btn-primary"%>
+

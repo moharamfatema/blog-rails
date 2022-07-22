@@ -1,4 +1,4 @@
-<div id="<%= dom_id comment %>">
+<div id="<%= dom_id comment %>" >
   <p>
     <strong><%= comment.name %></strong>
 
@@ -12,7 +12,7 @@
 
   <div class="row">
   <div class="col">
-    <%= link_to "Edit this comment", edit_post_comment_path(comment.post, comment) , class:"col btn btn-secondary"%>
+    <%= link_to "Edit this comment", edit_post_comment_path(comment.post, comment) , class:"col btn btn-secondary disabled" %>
   </div>
 
     <div class="col">
