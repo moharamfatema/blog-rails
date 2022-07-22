@@ -69,7 +69,7 @@ class CommentsController < ApplicationController
     end
   end
   def correct_user
-    redirect_to post_path(@comment.post), notice: "Unauthorized action!" if @comment.user_id != current_user.id?
+    redirect_to post_path(@comment.post), notice: "Unauthorized action!" if @comment.user_id != current_user.id
   end
   private
     def get_post
