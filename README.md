@@ -1,8 +1,5 @@
 # Blog (Posts with Comments)
 
-TODO: edit comment
-
-
 * Ruby version: ruby 3.1.2p20
 
 * Rails version: Rails 7.0.3.1
@@ -28,6 +25,23 @@ Edit Post
 ![Show Post](screenshots/post-show.png)
 
 Show Post
+
+![Edit Comment](screenshots/edit-comment.png)
+
+Edit Comment
+
+![Sign Up](screenshots/signup.png)
+
+Sign Up
+
+![Log In](screenshots/login.png)
+
+Log In
+
+![Edit Profile](screenshots/edit-user.png)
+
+Edit Profile
+
 
 ---
 
