@@ -26,4 +26,4 @@ production:
   <<: *default
   database: blog
   username: blog
-  password: <%= ENV['MYSITE_DATABASE_PASSWORD'] %>
+  password: <%= ENV['DATABASE_URL'] %>
